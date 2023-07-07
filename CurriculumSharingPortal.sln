@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33414.496
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurriculumSharingPortal.Web", "CurriculumSharingPortal.Web\CurriculumSharingPortal.Web.csproj", "{8BA80722-D3DE-498B-AA8E-EF35626BD91D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurriculumSharingPortal.Persistence", "CurriculumSharingPortal.Persistence\CurriculumSharingPortal.Persistence.csproj", "{C81A3344-54ED-4354-BF85-B06F63125DF6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurriculumSharingPortal.WebApi", "CurriculumSharingPortal.Api\CurriculumSharingPortal.WebApi.csproj", "{7900993D-934F-4AC3-8CBE-C5E937522BBD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurriculumSharingPortal.DTO", "CurriculumSharingPortal.DTO\CurriculumSharingPortal.DTO.csproj", "{04AC4879-B7B4-4902-BB92-C45854712305}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CurriculumSharingPortal.Desktop", "CurriculumSharingPortal.Desktop\CurriculumSharingPortal.Desktop.csproj", "{4BDFDF1C-3C0D-4134-A24E-6FFE7CEC08B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CurriculumSharingPortal.WebApi.Tests", "CurriculumSharingPortal.WebApi.Tests\CurriculumSharingPortal.WebApi.Tests.csproj", "{7218D82A-21F2-415D-A0C3-11ACBE2B0136}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8BA80722-D3DE-498B-AA8E-EF35626BD91D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BA80722-D3DE-498B-AA8E-EF35626BD91D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BA80722-D3DE-498B-AA8E-EF35626BD91D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BA80722-D3DE-498B-AA8E-EF35626BD91D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C81A3344-54ED-4354-BF85-B06F63125DF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C81A3344-54ED-4354-BF85-B06F63125DF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C81A3344-54ED-4354-BF85-B06F63125DF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C81A3344-54ED-4354-BF85-B06F63125DF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7900993D-934F-4AC3-8CBE-C5E937522BBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7900993D-934F-4AC3-8CBE-C5E937522BBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7900993D-934F-4AC3-8CBE-C5E937522BBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7900993D-934F-4AC3-8CBE-C5E937522BBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04AC4879-B7B4-4902-BB92-C45854712305}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04AC4879-B7B4-4902-BB92-C45854712305}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04AC4879-B7B4-4902-BB92-C45854712305}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04AC4879-B7B4-4902-BB92-C45854712305}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BDFDF1C-3C0D-4134-A24E-6FFE7CEC08B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BDFDF1C-3C0D-4134-A24E-6FFE7CEC08B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BDFDF1C-3C0D-4134-A24E-6FFE7CEC08B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BDFDF1C-3C0D-4134-A24E-6FFE7CEC08B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7218D82A-21F2-415D-A0C3-11ACBE2B0136}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7218D82A-21F2-415D-A0C3-11ACBE2B0136}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7218D82A-21F2-415D-A0C3-11ACBE2B0136}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7218D82A-21F2-415D-A0C3-11ACBE2B0136}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D2480589-1471-4E5A-9A0A-29BB7E843E35}
+	EndGlobalSection
+EndGlobal

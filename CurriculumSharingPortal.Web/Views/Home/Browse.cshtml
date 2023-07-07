@@ -1,0 +1,102 @@
+﻿@model CurriculumSharingPortal.Web.Models.PaginatedList<CurriculumSharingPortal.Persistence.Curriculum>
+
+@{
+    ViewData["Title"] = "Browse";
+}
+
+<h2>Browse</h2>
+
+<p>
+    <a asp-action="Create" asp-controller="Curriculum">Upload curriculum</a>
+</p>
+<p>
+    <a asp-action="Index">Back</a>
+</p>
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        <label>Find by title: </label>
+        <input type="text" name="SearchString" value="@ViewData["CurrentFilter"]" />
+        <label>Find by subject: </label>
+        <select asp-items="ViewBag.Subjects" name="SubjectFilter"></select>
+        <input type="submit" value="Search" />
+        <a asp-action="Browse">Clear</a>
+    </div>
+}
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-action="Browse" asp-route-sortOrder="@ViewData["TitleSortParam"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Title</a>
+            </th>
+            <th>
+                Subject
+            </th>
+            <th>
+                <a asp-action="Browse" asp-route-sortOrder="@ViewData["TimeSortParam"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">TimeStamp</a>
+            </th>
+            <th>
+                User
+            </th>
+            <th>
+                DownloadCount
+            </th>
+            <th>
+                <a asp-action="Browse" asp-route-sortOrder="@ViewData["RatingSortParam"]" asp-route-currentFilter="@ViewData["CurrentFilter"]">Rating</a>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Subject.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TimeStamp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DownloadCount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Rating)
+                </td>
+                <td>
+                    @if(item.File != null)
+                    {
+                        <a asp-action="DownloadFile" asp-controller="Curriculum" asp-route-id="@item.Id">Download file</a> 
+                    }
+                    | <a asp-action="Create" asp-controller="Review" asp-route-curriculumId="@item.Id">Review</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@{
+    var prevDisabled = !Model.HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !Model.HasNextPage ? "disabled" : "";
+}
+
+<a asp-action="Browse"
+   asp-route-sortOrder="@ViewData["CurrentSort"]"
+   asp-route-pageNumber="@(Model.PageIndex - 1)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="btn btn-default @prevDisabled">
+    Previous
+</a>
+<a asp-action="Browse"
+   asp-route-sortOrder="@ViewData["CurrentSort"]"
+   asp-route-pageNumber="@(Model.PageIndex + 1)"
+   asp-route-currentFilter="@ViewData["CurrentFilter"]"
+   class="btn btn-default @nextDisabled">
+    Next
+</a>

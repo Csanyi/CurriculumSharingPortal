@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "mssql2": {
+      "ignored": "true",
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:SqlServerConnection"
+    },
+    "secrets1": {
+      "ignored": "true",
+      "type": "secrets"
+    },
+    "mssql1": {
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/curriculumsharingportalwebdbserver/databases/CurriculumSharingPortal.Web_db",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:AzureConnection"
+    }
+  }
+}

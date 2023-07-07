@@ -1,0 +1,42 @@
+﻿@model CurriculumSharingPortal.Web.Models.ReviewViewModel
+
+@{
+    ViewData["Title"] = "Review curriculum";
+}
+
+<h2>Review @ViewBag.CurriculumTitle</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create" asp-route-userId="@ViewBag.UserId">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input type="hidden" asp-for="CurriculumId" />
+                <label asp-for="Value" class="control-label"></label>
+                <div>
+                    @for (int i = CurriculumSharingPortal.Web.Models.ReviewViewModel.MinValue; i <= CurriculumSharingPortal.Web.Models.ReviewViewModel.MaxValue; ++i)
+                    {
+                        @Html.RadioButtonFor(m => m.Value, i)
+                        @Html.Label(i.ToString())
+                        <br />
+                    }
+                </div>
+                <span asp-validation-for="Value" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Review" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Browse" asp-controller="Home">Back to browse</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+

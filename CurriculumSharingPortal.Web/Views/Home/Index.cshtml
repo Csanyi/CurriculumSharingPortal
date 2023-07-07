@@ -1,0 +1,60 @@
+﻿@model IEnumerable<CurriculumSharingPortal.Persistence.Curriculum>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Last uploaded curriculums</h2>
+
+<p>
+    <a asp-action="Create" asp-controller="Curriculum">Upload curriculum</a>
+</p>
+<p>
+    <a asp-action="Browse">Browse</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Subject)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TimeStamp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Take(15))
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Subject.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TimeStamp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User.UserName)
+                </td>
+                <td>
+                <td>
+                    @if (item.File != null)
+                    {
+                    <a asp-action="DownloadFile" asp-controller="Curriculum" asp-route-id="@item.Id">Download file</a>
+                    }
+                    | <a asp-action="Create" asp-controller="Review" asp-route-curriculumId="@item.Id">Review</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
